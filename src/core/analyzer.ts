@@ -1,11 +1,10 @@
 import { file } from 'bun'
 import path from 'node:path'
-import type { ProjectInfo, ProjectType } from './types'
+import type { ProjectInfo } from './types'
 
-const getCurrentDirName = () => path.basename(process.cwd())
-
-export async function analyzeProject(): Promise<ProjectInfo> {
-	const cwd = process.cwd()
+export async function analyzeProject(targetDir: string = process.cwd()): Promise<ProjectInfo> {
+	const cwd = path.resolve(targetDir)
+  	const getCurrentDirName = () => path.basename(cwd)
 
 	// node
 	const pkgJson = file(path.join(cwd, 'package.json'))

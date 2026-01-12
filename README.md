@@ -77,7 +77,7 @@ You will be able to customize the output via `~/.config/stackfetch/config.json`
 * [ ] **Native Binaries**: Automated GitHub Actions to build .exe (Windows) and binary (Linux) on release.
 * [x] **Config System**: Allow users to hide logo or specific lines via JSON config.
 * [ ] **Git Integration**: Display current branch and "dirty" state (modified files).
-* [ ] **Framework Detection**: React, Astro, Next.js, NestJS, Django, Flask.
+* [x] **Framework Detection**: React, Astro, Next.js, NestJS, Django, Flask.
 * [ ] **Package Repositories**: Official support for apt, dnf, brew.
 * [ ] **Health Check**: Count TODO / FIXME comments in source code
 

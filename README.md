@@ -1,6 +1,7 @@
 # StackFetch
 
-> **The Project-Context Tool.** > Minimalist, lightning-fast CLI that displays essential information about your current working directory.
+> **The Project-Context Tool.** 
+> Minimalist, lightning-fast CLI that displays essential information about your current working directory.
 
 ## Philosophy
 

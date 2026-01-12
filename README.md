@@ -75,7 +75,7 @@ You can toggle the ASCII logo, borders, titles, or specific data lines to match 
 ## Roadmap
 
 * [ ] **One-Line Installer**: Universal install.sh script for Linux/macOS.
-* [ ] **Native Binaries**: Automated GitHub Actions to build .exe (Windows) and binary (Linux) on release.
+* [x] **Native Binaries**: Automated GitHub Actions to build .exe (Windows) and binary (Linux) on release.
 * [x] **Config System**: Allow users to hide logo or specific lines via JSON config.
 * [x] **Framework Detection**: React, Astro, Next.js, NestJS, Django, Flask.
 * [ ] **Package Repositories**: Official support for apt, dnf, brew.

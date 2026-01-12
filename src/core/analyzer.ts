@@ -14,7 +14,7 @@ export async function analyzeProject(
     try {
       const content = await pkgJson.json();
       const deps = { ...content.dependencies, ...content.devDependencies };
-      
+
       let type: ProjectType = 'javascript';
       const isTs = await file(path.join(cwd, 'tsconfig.json')).exists();
 
@@ -31,9 +31,7 @@ export async function analyzeProject(
         type: type,
         configPath: 'package.json',
       };
-    } catch {
-
-    }
+    } catch {}
   }
 
   // rust
@@ -52,7 +50,7 @@ export async function analyzeProject(
   if (await goMod.exists()) {
     const text = await goMod.text();
     const moduleName = text.split('\n')[0]?.replace('module ', '').trim();
-    
+
     return {
       name: moduleName || getCurrentDirName(),
       version: 'unknown',
@@ -75,17 +73,30 @@ export async function analyzeProject(
 
   // java (maven, gradle)
   if (await file(path.join(cwd, 'pom.xml')).exists()) {
-    return { name: getCurrentDirName(), version: 'unknown', type: 'java', configPath: 'pom.xml' };
+    return {
+      name: getCurrentDirName(),
+      version: 'unknown',
+      type: 'java',
+      configPath: 'pom.xml',
+    };
   }
-  if (await file(path.join(cwd, 'build.gradle')).exists() || await file(path.join(cwd, 'build.gradle.kts')).exists()) {
-    return { name: getCurrentDirName(), version: 'unknown', type: 'java', configPath: 'build.gradle' };
+  if (
+    (await file(path.join(cwd, 'build.gradle')).exists()) ||
+    (await file(path.join(cwd, 'build.gradle.kts')).exists())
+  ) {
+    return {
+      name: getCurrentDirName(),
+      version: 'unknown',
+      type: 'java',
+      configPath: 'build.gradle',
+    };
   }
 
   // c, cpp, csharp
   const fs = await import('node:fs/promises');
   try {
     const files = await fs.readdir(cwd);
-    
+
     // csharp
     const csproj = files.find((f) => f.endsWith('.csproj'));
     if (csproj) {
@@ -99,17 +110,24 @@ export async function analyzeProject(
 
     // cpp
     if (files.includes('CMakeLists.txt')) {
-       return { name: getCurrentDirName(), version: '-', type: 'cpp', configPath: 'CMakeLists.txt' };
+      return {
+        name: getCurrentDirName(),
+        version: '-',
+        type: 'cpp',
+        configPath: 'CMakeLists.txt',
+      };
     }
 
     // c
     if (files.includes('Makefile')) {
-       return { name: getCurrentDirName(), version: '-', type: 'c', configPath: 'Makefile' };
+      return {
+        name: getCurrentDirName(),
+        version: '-',
+        type: 'c',
+        configPath: 'Makefile',
+      };
     }
-
-  } catch (error) {
-
-  }
+  } catch (error) {}
 
   return {
     name: getCurrentDirName(),

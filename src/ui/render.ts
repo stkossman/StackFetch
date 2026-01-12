@@ -1,15 +1,19 @@
-import boxen from 'boxen'
-import { theme } from '../utils/theme'
-import { getLogo } from '../utils/ascii'
-import type { ProjectInfo } from '../core/types'
+import boxen from 'boxen';
+import { theme } from '../utils/theme';
+import { getLogo } from '../utils/ascii';
+import type { ProjectInfo } from '../core/types';
 
 export function renderUI(project: ProjectInfo): string {
   const infoLines = [
     `${theme.ui.label('Project:')}  ${theme.ui.value(project.name)}`,
     `${theme.ui.label('Version:')}  ${theme.ui.value(project.version)}`,
     `${theme.ui.label('Stack:')}    ${theme.brand[project.type as keyof typeof theme.brand](project.type)}`,
-    project.configPath ? `${theme.ui.label('Config:')}   ${theme.ui.value(project.configPath)}` : '',
-  ].filter(Boolean).join('\n')
+    project.configPath
+      ? `${theme.ui.label('Config:')}   ${theme.ui.value(project.configPath)}`
+      : '',
+  ]
+    .filter(Boolean)
+    .join('\n');
 
   const logo = getLogo(project.type);
 
@@ -18,8 +22,8 @@ export function renderUI(project: ProjectInfo): string {
     '',
     theme.ui.border('--'.repeat(30)),
     '',
-    infoLines
-  ].join('\n')
+    infoLines,
+  ].join('\n');
 
   return boxen(content, {
     padding: 1,
@@ -28,6 +32,6 @@ export function renderUI(project: ProjectInfo): string {
     borderColor: 'cyan',
     title: theme.ui.title(' StackFetch '),
     titleAlignment: 'center',
-    textAlignment: 'center'
-  })
+    textAlignment: 'center',
+  });
 }

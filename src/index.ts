@@ -4,20 +4,20 @@ import { version } from '../package.json';
 import { analyzeProject } from './core/analyzer';
 import { renderUI } from './ui/render';
 import { theme } from './utils/theme';
+import { loadConfig } from './core/config';
 
 const cli = cac('stackfetch');
 
 cli
   .command('[dir]', 'Scan a specific directory (default: current)')
   .action(async (dir) => {
-    console.log(theme.ui.title(`StackFetch v${version}`));
+    const config = await loadConfig();
 
     const target = dir || '.';
-    console.log(theme.ui.label(`Scanning ${target}...`));
 
     const project = await analyzeProject(target);
 
-    console.log(renderUI(project));
+    console.log(renderUI(project, config));
   });
 
 cli.help();

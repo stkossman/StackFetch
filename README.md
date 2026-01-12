@@ -75,7 +75,7 @@ You will be able to customize the output via `~/.config/stackfetch/config.json`
 
 * [ ] **One-Line Installer**: Universal install.sh script for Linux/macOS.
 * [ ] **Native Binaries**: Automated GitHub Actions to build .exe (Windows) and binary (Linux) on release.
-* [ ] **Config System**: Allow users to hide logo or specific lines via JSON config.
+* [x] **Config System**: Allow users to hide logo or specific lines via JSON config.
 * [ ] **Git Integration**: Display current branch and "dirty" state (modified files).
 * [ ] **Framework Detection**: React, Astro, Next.js, NestJS, Django, Flask.
 * [ ] **Package Repositories**: Official support for apt, dnf, brew.

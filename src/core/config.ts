@@ -1,6 +1,7 @@
-import { file } from 'bun';
+import { file, write } from 'bun';
 import os from 'node:os';
 import path from 'node:path';
+import fs from 'node:fs/promises';
 
 export interface StackFetchConfig {
   display: {
@@ -31,30 +32,27 @@ export const defaultConfig: StackFetchConfig = {
 };
 
 export async function loadConfig(): Promise<StackFetchConfig> {
-  try {
-    const homeDir = os.homedir();
-    const configPath = path.join(
-      homeDir,
-      '.config',
-      'stackfetch',
-      'config.json'
-    );
-    const configFile = await file(configPath);
+  const homeDir = os.homedir();
+  const configDir = path.join(homeDir, '.config', 'stackfetch');
+  const configPath = path.join(configDir, 'config.json');
 
-    if (await configFile.exists()) {
+  const configFile = file(configPath);
+
+  if (await configFile.exists()) {
+    try {
       const userConfig = await configFile.json();
-
       return {
-        display: {
-          ...defaultConfig.display,
-          ...(userConfig.display || {}),
-        },
-        modules: {
-          ...defaultConfig.modules,
-          ...(userConfig.modules || {}),
-        },
+        display: { ...defaultConfig.display, ...(userConfig.display || {}) },
+        modules: { ...defaultConfig.modules, ...(userConfig.modules || {}) },
       };
+    } catch (error) {
+      return defaultConfig;
     }
+  }
+
+  try {
+    await fs.mkdir(configDir, { recursive: true });
+    await write(configPath, JSON.stringify(defaultConfig, null, 2));
   } catch (error) {}
 
   return defaultConfig;

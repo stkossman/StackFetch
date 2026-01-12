@@ -3,7 +3,6 @@ import { cac } from 'cac';
 import { version } from '../package.json';
 import { analyzeProject } from './core/analyzer';
 import { renderUI } from './ui/render';
-import { theme } from './utils/theme';
 import { loadConfig } from './core/config';
 
 const cli = cac('stackfetch');

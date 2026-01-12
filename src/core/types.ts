@@ -4,6 +4,15 @@ export type ProjectType =
   | 'csharp'
   | 'python'
   | 'rust'
+  | 'go'
+  | 'java'
+  | 'c'
+  | 'cpp'
+  | 'react'
+  | 'nextjs'
+  | 'astro'
+  | 'vue'
+  | 'nestjs'
   | 'unknown';
 
 export interface ProjectInfo {

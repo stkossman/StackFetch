@@ -16,13 +16,24 @@ export const theme = {
   },
 
   brand: {
+    // langs
     javascript: pc.yellow,
     typescript: pc.blue,
-    react: pc.cyan,
     python: pc.green,
     rust: pc.red,
     csharp: pc.magenta,
     go: pc.cyan,
+    java: pc.red,
+    c: pc.blue,
+    cpp: pc.blue,
+
+    // frameworks
+    react: pc.cyan,
+    nextjs: pc.white,
+    astro: pc.magenta,
+    vue: pc.green,
+    nestjs: pc.red,
+
     unknown: pc.gray,
   },
 };

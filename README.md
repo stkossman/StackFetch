@@ -5,7 +5,7 @@
 
 ## Philosophy
 
-StackFetch is designed for developers who value minimalism. Instead of showing global OS info (like Neofetch), it shows context relevant to the **project you are working on**.
+StackFetch is CLI that displays essential information about your current working directory. Instead of showing global OS info (like Neofetch), it shows context relevant to the **project you are working on**.
 
 ##### Check out my projects
 <table>
@@ -59,17 +59,18 @@ stackfetch /var/www/website
 
 ## Supported Stacks
 
-Currently detects and parses:
-* JavaScript (`package.json`)
-* TypeScript (`tsconfig.json`)
-* Rust (`Cargo.toml`)
-* Python (`requirements.txt` / `pyproject.toml`)
-* C# (`*.csproj`)
+StackFetch currently supports **15+ languages and frameworks** including:
+* **Languages**: JS, TS, C#, Java, Rust, Go, Python, C/C++.
+* **Frameworks**: React, Next.js, Astro, Vue, NestJS
+
+**[View full list of supported stacks & detection rules](docs/supported_stacks.md)**
 
 ## Configuration
-> Coming Soon
+StackFetch is highly customizable. Upon first launch, it automatically creates a config file at `~/.config/stackfetch/config.json`.
 
-You will be able to customize the output via `~/.config/stackfetch/config.json`
+You can toggle the ASCII logo, borders, titles, or specific data lines to match your terminal aesthetic.
+
+**[Read the Configuration Guide](docs/configuration.md)**
 
 ## Roadmap
 

@@ -25,7 +25,7 @@ Requirements: [Bun](https://bun.sh)
 
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/stkossman/StackFetch](https://github.com/stkossman/StackFetch)
+git clone https://github.com/stkossman/StackFetch.git
 cd StackFetch
 
 # 2. Install dependencies

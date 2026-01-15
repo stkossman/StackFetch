@@ -38,7 +38,9 @@ bun link
 Now you can run `stackfetch` anywhere in your terminal.
 
 ### Curl
-> Coming Soon
+```bash
+curl -fsSL https://raw.githubusercontent.com/stkossman/StackFetch/main/install.sh | bash
+```
 
 ### Package Managers
 > Coming Soon
@@ -59,7 +61,7 @@ stackfetch /var/www/website
 
 ## Supported Stacks
 
-StackFetch currently supports **15+ languages and frameworks** including:
+StackFetch currently supports **10+ languages and frameworks** including:
 * **Languages**: JS, TS, C#, Java, Rust, Go, Python, C/C++.
 * **Frameworks**: React, Next.js, Astro, Vue, NestJS
 
@@ -74,11 +76,19 @@ You can toggle the ASCII logo, borders, titles, or specific data lines to match 
 
 ## Roadmap
 
-* [ ] **One-Line Installer**: Universal install.sh script for Linux/macOS.
+### Core
+* [x] **One-Line Installer**: Universal install.sh script for Linux/macOS.
 * [x] **Native Binaries**: Automated GitHub Actions to build .exe (Windows) and binary (Linux) on release.
 * [x] **Config System**: Allow users to hide logo or specific lines via JSON config.
-* [x] **Framework Detection**: React, Astro, Next.js, NestJS, Django, Flask.
 * [ ] **Package Repositories**: Official support for apt, dnf, brew.
+
+### Analysis Engine
+* [x] **Basic Frameworks:** React, Astro, Next.js, NestJS.
+* [ ] **Desktop & Mobile:** Detect Electron, Tauri, React Native, Expo.
+* [ ] **Full-stack & Meta:** Nuxt, SvelteKit, Remix.
+* [ ] **Styling & UI:** Detect TailwindCSS, Bootstrap, Sass, PostCSS, Material UI, Chakra UI.
+* [ ] **Infrastructure:** Detect Docker, Kubernetes.
+* [ ] **Package Manager:** Identify npm, pnpm, yarn, or bun usage.
 
 ---
 

@@ -25,7 +25,7 @@ If a `package.json` is found, StackFetch analyzes dependencies to identify speci
 | **React** | `react` / `react-dom` |
 | **Next.js** | `next` |
 | **Astro** | `astro` |
-| **Vue / Nuxt** | `vue` / `nuxt` |
+| **Vue** | `vue` |
 | **NestJS** | `@nestjs/core` |
 
 *Don't see your favorite stack? Feel free to [open an issue](https://github.com/stkossman/StackFetch/issues) or contribute.*

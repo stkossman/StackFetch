@@ -13,6 +13,7 @@ export interface StackFetchConfig {
     project: boolean;
     version: boolean;
     stack: boolean;
+    styles: boolean;
     config: boolean;
   };
 }
@@ -27,6 +28,7 @@ export const defaultConfig: StackFetchConfig = {
     project: true,
     version: true,
     stack: true,
+    styles: true,
     config: true,
   },
 };

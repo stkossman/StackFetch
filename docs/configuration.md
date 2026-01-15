@@ -27,6 +27,7 @@ The configuration uses a standard JSON format. Here are the default settings gen
     "project": true,
     "version": true,
     "stack": true,
+    "styles": true,
     "config": true
   }
 }
@@ -53,4 +54,5 @@ Toggle specific lines of information on/off.
 | project | boolean | true | Display project name (parsed from config file or folder name) |
 | version | boolean | true | Display project version (e.g., `1.0.0`) |
 | stack | boolean | true | Display the detected technology (e.g., `React`, `Rust`) |
+| styles | boolean | true | Display detected CSS frameworks/libraries (e.g., `Tailwind`, `Sass`) |
 | config | boolean | true | Display the source file used for detection (e.g., `package.json`) |

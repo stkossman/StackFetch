@@ -26,9 +26,9 @@ export function renderUI(
       theme.brand.unknown;
     lines.push(`${theme.ui.label('Stack:')}    ${stackIcon(project.type)}`);
   }
-  if (project.style && project.style.length > 0) {
+  if (config.modules.styles && project.style && project.style.length > 0) {
     const styleStr = project.style.join(', ');
-    lines.push(`${theme.ui.label('Style:')} ${theme.ui.value(styleStr)}`);
+    lines.push(`${theme.ui.label('Style:')}    ${theme.ui.value(styleStr)}`);
   }
   if (config.modules.config && project.configPath) {
     lines.push(

@@ -29,10 +29,25 @@ export const theme = {
 
     // frameworks
     react: pc.cyan,
-    nextjs: pc.white,
-    astro: pc.magenta,
     vue: pc.green,
+    svelte: pc.red,
+    angular: pc.red,
+
+    // meta frameworks
+    nextjs: pc.white,
     nestjs: pc.red,
+    nuxt: pc.green,
+    remix: pc.white,
+    solid: pc.blue,
+    astro: pc.magenta,
+
+    // mobile & desktop
+    'react-native': pc.cyan,
+    expo: pc.white,
+    electron: pc.cyan,
+    tauri: pc.yellow,
+
+    // TODO: Add colours for CSS frameworks (Tailwind, Bootstrap...)
 
     unknown: pc.gray,
   },

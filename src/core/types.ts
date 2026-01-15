@@ -1,4 +1,5 @@
 export type ProjectType =
+  // languages
   | 'javascript'
   | 'typescript'
   | 'csharp'
@@ -8,11 +9,26 @@ export type ProjectType =
   | 'java'
   | 'c'
   | 'cpp'
+
+  // frameworks
   | 'react'
-  | 'nextjs'
-  | 'astro'
   | 'vue'
+  | 'svelte'
+  | 'angular'
+
+  // meta frameworks
+  | 'nextjs'
   | 'nestjs'
+  | 'astro'
+  | 'nuxt'
+  | 'remix'
+  | 'solid'
+
+  // mobile & desktop
+  | 'react-native'
+  | 'expo'
+  | 'electron'
+  | 'tauri'
   | 'unknown';
 
 export interface ProjectInfo {
@@ -20,4 +36,5 @@ export interface ProjectInfo {
   version: string;
   type: ProjectType;
   configPath?: string;
+  style?: string[];
 }

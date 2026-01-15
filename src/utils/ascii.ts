@@ -104,6 +104,7 @@ export const logos: Record<string, string> = {
 | | | |   __|__   | | |  
 |_|___|_____|_____| |_|`
   ),
+  // TODO: Add ASCII arts for new stack (Electron, Tauri, Nuxt, Svelte...)
   unknown: theme.brand.unknown(
     `
  _____ 

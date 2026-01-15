@@ -84,9 +84,9 @@ You can toggle the ASCII logo, borders, titles, or specific data lines to match 
 
 ### Analysis Engine
 * [x] **Basic Frameworks:** React, Astro, Next.js, NestJS.
-* [ ] **Desktop & Mobile:** Detect Electron, Tauri, React Native, Expo.
-* [ ] **Full-stack & Meta:** Nuxt, SvelteKit, Remix.
-* [ ] **Styling & UI:** Detect TailwindCSS, Bootstrap, Sass, PostCSS, Material UI, Chakra UI.
+* [x] **Desktop & Mobile:** Detect Electron, Tauri, React Native, Expo.
+* [x] **Full-stack & Meta:** Nuxt, SvelteKit, Remix.
+* [x] **Styling & UI:** Detect TailwindCSS, Bootstrap, Sass, PostCSS, Material UI, Chakra UI.
 * [ ] **Infrastructure:** Detect Docker, Kubernetes.
 * [ ] **Package Manager:** Identify npm, pnpm, yarn, or bun usage.
 
